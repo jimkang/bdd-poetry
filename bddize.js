@@ -1,6 +1,6 @@
 var dropEndPuncRegex = /\W$/;
 var dropEndPoemText = / poem$/;
-var specialTenseRegex = /^(\w+)(:?ing|ed|s)/;
+var specialTenseRegex = /^(\w+)(:?ing|ed|s) /;
 
 function BDDize(poemText) {
   var bddPoem = '';
@@ -20,7 +20,7 @@ function BDDize(poemText) {
     if (lines.length === 3) {
       bddPoem += ('GIVEN: ' + lines[0].replace(dropEndPuncRegex, '') + '\n');
       bddPoem += ('WHEN: ' + lines[1].replace(dropEndPuncRegex, '') + '\n');
-      bddPoem += ('THEN: ' + lines[2].replace(specialTenseRegex, '$1'));
+      bddPoem += ('THEN: ' + lines[2].replace(specialTenseRegex, '$1 '));
     }
   }
   return bddPoem;
