@@ -1,6 +1,6 @@
 var dropEndPuncRegex = /\W$/;
 var dropEndPoemText = / poem$/;
-var specialTenseRegex = /^(\w+)(:?ing|ed)/;
+var specialTenseRegex = /^(\w+)(:?ing|ed|s)/;
 
 function BDDize(poemText) {
   var bddPoem = '';

@@ -13,6 +13,10 @@ var testCases = [
   {
     poem: "Napped half the day;\nno one \npunished me!",
     expected: "GIVEN: Napped half the day\nWHEN: no one\nTHEN: punish me!"
+  },
+  {
+    poem: "Visiting the graves,\nthe old dog\nleads the way.",
+    expected: "GIVEN: Visiting the graves\nWHEN: the old dog\nTHEN: lead the way."
   }
 ];
 
