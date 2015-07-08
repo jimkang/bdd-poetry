@@ -8,7 +8,7 @@ test('Basic test', function basicTest(t) {
   var bddPoem = BDDize(poem);
   console.log(bddPoem);
 
-  var expectedPoem = 'GIVEN:         A bath when you\'re born,\nWHEN:         a bath when you die,\nTHEN:         how stupid.';
+  var expectedPoem = 'GIVEN:         A bath when you\'re born\nWHEN:         a bath when you die\nTHEN:         how stupid.';
 
   debugger;
   t.equal(
