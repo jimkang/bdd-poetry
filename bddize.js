@@ -6,17 +6,19 @@ function BDDize(poemText) {
     var body = titleAndBody[titleAndBody.length - 1];
     var lines = body.split('\n');
     if (lines.length === 3) {
-      BDDpoem += ('GIVEN: ' + chopComma(lines[0]) + '\n');
-      BDDpoem += ('WHEN: ' + chopComma(lines[1]) + '\n');
-      BDDpoem += ('THEN: ' + chopComma(lines[2]));
+      BDDpoem += ('GIVEN: ' + chop(lines[0], ',') + '\n');
+      BDDpoem += ('WHEN: ' + chop(lines[1], ',') + '\n');
+      BDDpoem += ('THEN: ' + chop(lines[2], ','));
     }
   }
   return BDDpoem;
 }
 
-function chopComma(s) {
-  if (s.charAt(s.length - 1) === ',') {
-    return s.slice(0, s.length - 1);
+function chop(s, toDrop) {
+  var dropStart = s.length - toDrop.length;
+  var endChunk = s.slice(dropStart);
+  if (endChunk === toDrop) {
+    return s.slice(0, dropStart);
   }
   else {
     return s;
