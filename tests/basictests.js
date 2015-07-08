@@ -1,14 +1,22 @@
 var test = require('tape');
 var BDDize = require('../bddize');
 
-test('Basic test', function basicTest(t) {
-  t.plan(1);
+var testCases = [
+  {
+    poem: 'His death poem:\n\n        A bath when you\'re born,\n        a bath when you die,\n        how stupid.',
+    expected: 'Scenario: His death\nGIVEN:         A bath when you\'re born\nWHEN:         a bath when you die\nTHEN:         how stupid.'
+  }
+];
 
-  var poem = 'His death poem:\n\n        A bath when you\'re born,\n        a bath when you die,\n        how stupid.';
-  var bddPoem = BDDize(poem);
-  console.log(bddPoem);
+testCases.forEach(runTest);
 
-  var expectedPoem = 'Scenario: His death\nGIVEN:         A bath when you\'re born\nWHEN:         a bath when you die\nTHEN:         how stupid.';
+function runTest(testCase) {
+  test('Basic test', function basicTest(t) {
+    t.plan(1);
 
-  t.equal(bddPoem, expectedPoem, 'Correctly BDDizes.');
-});
+    var bddPoem = BDDize(testCase.poem);
+    console.log(bddPoem);
+
+    t.equal(bddPoem, testCase.expected, 'Correctly BDDizes.');
+  });
+}
