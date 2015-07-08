@@ -1,4 +1,5 @@
-var dropEndPuncRegex = /\W$/g;
+var dropEndPuncRegex = /\W$/;
+var dropEndPoemText = / poem$/;
 
 function BDDize(poemText) {
   var bddPoem = '';
@@ -9,8 +10,8 @@ function BDDize(poemText) {
     var body = titleAndBody[titleAndBody.length - 1];
 
     if (titleAndBody.length > 1) {
-      title = chop(titleAndBody[0], ':');
-      title = chop(title, ' poem');
+      title = titleAndBody[0].replace(dropEndPuncRegex, '');
+      title = title.replace(dropEndPoemText, '');
       bddPoem += ('Scenario: ' + title + '\n');
     }
 
@@ -22,17 +23,6 @@ function BDDize(poemText) {
     }
   }
   return bddPoem;
-}
-
-function chop(s, toDrop) {
-  var dropStart = s.length - toDrop.length;
-  var endChunk = s.slice(dropStart);
-  if (endChunk === toDrop) {
-    return s.slice(0, dropStart);
-  }
-  else {
-    return s;
-  }
 }
 
 module.exports = BDDize;
