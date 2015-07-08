@@ -1,7 +1,7 @@
 bdd-poetry
 ==================
 
-This is a bot that does a thing.
+This is a bot that posts BDD-style poems.
 
 Installation
 ------------
