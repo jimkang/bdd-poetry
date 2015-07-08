@@ -1,4 +1,4 @@
-yet-another-module
+bdd-poetry
 ==================
 
 This is a bot that does a thing.

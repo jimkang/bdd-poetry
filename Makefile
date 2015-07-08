@@ -1,15 +1,11 @@
 HOMEDIR = $(shell pwd)
-GITDIR = /var/repos/yet-another-module.git
-PM2 = $(HOMEDIR)/node_modules/pm2/bin/pm2
+GITDIR = /var/repos/bdd-poetry.git
 
 test:
 	node tests/basictests.js
 
-start: start-yet-another-module
-	psy start -n yet-another-module -- node yet-another-module.js
-
-stop:
-	psy stop yet-another-module || echo "Non-zero return code is OK."
+run:
+	node post-bdd-poem.js
 
 sync-worktree-to-git:
 	git --work-tree=$(HOMEDIR) --git-dir=$(GITDIR) checkout -f
@@ -19,4 +15,4 @@ npm-install:
 	npm install
 	npm prune
 
-post-receive: sync-worktree-to-git npm-install stop start
+post-receive: sync-worktree-to-git npm-install
