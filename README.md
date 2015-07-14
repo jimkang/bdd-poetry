@@ -1,7 +1,7 @@
-bdd-poetry
-==================
+whosthereautocomplete
+=====================
 
-This is a bot that posts BDD-style poems.
+This is a bot that posts autocompleted knock-knock jokes.
 
 Installation
 ------------

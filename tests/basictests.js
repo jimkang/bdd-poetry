@@ -21,6 +21,10 @@ var testCases = [
   {
     poem: "These sea slugs,\nthey just don't seem\nJapanese.",
     expected: "GIVEN: These sea slugs\nWHEN: they just don't seem\nTHEN: Japanese."
+  },
+  {
+    poem: "It once happened\nthat a child was spared punishment\nthrough earnest solicitation.",
+    expected: "GIVEN: It once happened\nWHEN: that a child was spared punishment\nTHEN: earnest solicitation."    
   }
 ];
 

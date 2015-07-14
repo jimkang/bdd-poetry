@@ -1,5 +1,5 @@
 {
-  "name": "bdd-poetry",
+  "name": "whosthereautocomplete",
   "version": "1.0.0",
   "description": "Does some cool things.",
   "main": "index.js",
@@ -8,21 +8,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:jimkang/bdd-poetry.git"
+    "url": "git@github.com:jimkang/whosthereautocomplete.git"
   },
   "keywords": [],
   "author": "Jim Kang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jimkang/bdd-poetry/issues"
+    "url": "https://github.com/jimkang/whosthereautocomplete/issues"
   },
-  "homepage": "https://github.com/jimkang/bdd-poetry",
+  "homepage": "https://github.com/jimkang/whosthereautocomplete",
   "devDependencies": {
     "tape": "^3.0.3"
   },
   "dependencies": {
     "async": "^0.9.0",
     "call-next-tick": "^1.1.2",
+    "get-spatial-preposition": "^1.0.0",
     "jsonfile": "^2.2.1",
     "probable": "^1.7.0",
     "twit": "^1.1.20"
